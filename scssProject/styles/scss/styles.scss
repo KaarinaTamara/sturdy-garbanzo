@@ -1,0 +1,51 @@
+// 7) add  our new scss file we just made. after we do this MAKE SURE BOTH THIS PAGE AND "_setup.scss" ARE SAVED. go to styles.css and a new large chunk of code should be added in there  
+@import 'setup';
+// 10) it is good practice to only use one page to import all your other scss pages such as we are doing here. if the scss file is saed in another file connect like "./folderNameHere/variables"
+@import 'variables';
+// 11) make a new file called '_mixins', import and go to that page for next steps
+@import 'mixins';
+
+// 2) SCSS VARIABLES make a code for $junoRed to find the exact color
+$junoRed: #EA693E;
+
+
+//1) THIS IS THE TESTER CSS CODE WE PUT FIRST. MAKE SURE YOU PUT IT IN THIS FILE, NOT CSS. AS SOON AS YOU TURN ON WATCH IT WILL COPY OVER TO CSS IN REAL TIME  
+body {
+    // 3) SCSS VAIRABLES PART 2 code out background color: #ea693e as we have now set that as junoRed. now we can select this color without the hexcode and call it JunoRed as we setup in step 2
+    // background: #EA693E; 
+    background: $junoRed; 
+    color: blue;
+}
+
+// 13
+// h2 {
+//     @include headerFont();
+// }
+
+// 15 we can do seperate things with similar properties but changing one thing such as font size. also in the mixins page we could set a font size and everything with that @include will render to that font size unless requested otherwise  
+h2 {
+    @include headerFont(50px, darkcyan);
+}
+
+h3 {
+    @include headerFont(20px, purple);
+}
+
+// 4) we can also use scss to go ultra deep with our coding like this! we call it nesting
+// sass inception rule: never go more than three levels deep!!! this is an example of four levels deep: nav, ul, li, and a. also with alot of code in a level it can become very complicated. it is not always recommended to nest in these cases, especially when others could be reading your code as well.  
+nav {
+    background: skyblue; 
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            a{
+                color: white;
+            }
+        }
+     }
+}
+
+// 5) SCSS Partials this always us to have several files of css to organize our styling. we created a new file in syles->scss called "_setup.scss". for step 6) go to the new scss file and add the setup snippet. now scroll to top of this page for next step 
+
+// 8) made another file called "_variables.scss" go to that page for step 9) 
